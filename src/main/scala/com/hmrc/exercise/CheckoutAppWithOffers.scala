@@ -4,7 +4,6 @@ import scala.collection.immutable.HashMap
 
 class CheckoutAppWithOffers extends Application {
   val offers = HashMap("Apple" ->(2, 1), "Orange" ->(3, 2))
-  val prices = HashMap("Apple" -> 60, "Orange" -> 25)
 
   def checkout(listOfItems: List[String]): String = {
     val (apples, oranges) = listOfItems.partition(s => s.equals("Apple"))
