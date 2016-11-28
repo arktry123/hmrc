@@ -2,7 +2,7 @@ package com.hmrc.exercise
 
 import scala.collection.immutable.HashMap
 
-class CheckoutApp {
+class CheckoutApp extends Application{
   val prices = HashMap("Apple" -> 60, "Orange" -> 25)
   def checkout(lisOfItems: List[String]):String = {
     val (apples, oranges) = lisOfItems.partition(item => item.equals("Apple"))
