@@ -29,4 +29,16 @@ class CheckoutAppSpec extends FunSuite with BeforeAndAfter{
     assert(checkoutApp.checkout(List("Orange", "Apple")) == "£0.85")
   }
 
+  test("Two Oranges and One Apple should return 1.1"){
+    assert(checkoutApp.checkout(List("Orange", "Apple", "Orange")) == "£1.1")
+  }
+
+  test("Two Apples and One Orange should return 1.45"){
+    assert(checkoutApp.checkout(List("Apple", "Apple", "Orange")) == "£1.45")
+  }
+
+  test("Given Example case - Three Apples and One Orange should return 2.05"){
+    assert(checkoutApp.checkout(List("Apple", "Apple", "Orange", "Apple")) == "£2.05")
+  }
+
 }
