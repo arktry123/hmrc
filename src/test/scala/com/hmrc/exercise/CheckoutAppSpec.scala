@@ -41,4 +41,12 @@ class CheckoutAppSpec extends FunSuite with BeforeAndAfter{
     assert(checkoutApp.checkout(List("Apple", "Apple", "Orange", "Apple")) == "£2.05")
   }
 
+  test ("Huge number of Apples and Oranges") {
+    var list: List[String] = Nil
+    for(i <- 1 to 1000){
+      list = "Apple" :: list
+      list = "Orange" :: list
+    }
+    assert (checkoutApp.checkout(list) == "£850.0")
+  }
 }
